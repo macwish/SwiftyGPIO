@@ -294,7 +294,7 @@ public final class SysFSUART: UARTInterface {
         public var c_cflag: UInt32 = 0
         public var c_lflag: UInt32 = 0
         public var c_cc = [UInt32]()
-	public init()
+	public init() {}
     }
 
     func tcsetattr (_ fd: Int32, _ attr: Int32, _ tty: inout termios) -> Int { fatalError("Linux only") }
