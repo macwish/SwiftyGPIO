@@ -289,11 +289,12 @@ public final class SysFSUART: UARTInterface {
     // Shadowing some declarations from termios.h just to get it to compile with Xcode
     // As the rest, not atually intended to be run.
     public struct termios {
-        var c_iflag: UInt32 = 0
-        var c_oflag: UInt32 = 0
-        var c_cflag: UInt32 = 0
-        var c_lflag: UInt32 = 0
-        var c_cc = [UInt32]()
+        public var c_iflag: UInt32 = 0
+        public var c_oflag: UInt32 = 0
+        public var c_cflag: UInt32 = 0
+        public var c_lflag: UInt32 = 0
+        public var c_cc = [UInt32]()
+	public init()
     }
 
     func tcsetattr (_ fd: Int32, _ attr: Int32, _ tty: inout termios) -> Int { fatalError("Linux only") }
